@@ -28,6 +28,7 @@ zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::termsupport.zsh
 # 外部プラグイン
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light unixorn/fzf-zsh-plugin
 zinit load zdharma/history-search-multi-word
 # Plugin history-search-multi-word loaded with investigating.
 zinit load zdharma-continuum/history-search-multi-word
