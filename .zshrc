@@ -46,10 +46,6 @@ zinit light b4b4r07/httpstat
 source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
-export PATH=$PATH:~/go/bin
-export PATH=$PATH:~/.npm-global/bin
-export PATH=$PATH:~/.yarn/bin
-export PATH=$PATH:~/.config/yarn/global/node_modules/.bin
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 neofetch
