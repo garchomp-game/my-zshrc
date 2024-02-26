@@ -45,6 +45,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
 zinit light b4b4r07/httpstat
 
+export MANPAGER="col -b -x | /usr/local/bin/vim -R -c 'set ft=man noma nu' -"
+
 # GitHub CLI 補完スクリプトの読み込み
 if [ -f ~/.zsh/completion/_gh ]; then
     fpath=(~/.zsh/completion $fpath)
