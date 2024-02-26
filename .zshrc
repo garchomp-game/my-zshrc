@@ -1,3 +1,11 @@
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  # KEEP_ZSHRC 環境変数を設定して Oh My Zsh インストールスクリプトを実行
+  KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  exit
+fi
+
+# ここに zinit のインストールやその他の後続処理を記述する
+# 例: zinit のインストール処理（省略）
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
