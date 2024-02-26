@@ -26,6 +26,10 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+# Oh My Zsh のプラグイン
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::docker
 # OMZL Shorthand Syntax
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::termsupport.zsh
@@ -44,8 +48,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # httpstat プラグインの設定
 zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
 zinit light b4b4r07/httpstat
-
-export MANPAGER="col -b -x | /usr/local/bin/vim -R -c 'set ft=man noma nu' -"
 
 # GitHub CLI 補完スクリプトの読み込み
 if [ -f ~/.zsh/completion/_gh ]; then
