@@ -37,8 +37,6 @@ zinit load zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-# Snippet
-zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 # httpstat プラグインの設定
 zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
 zinit light b4b4r07/httpstat
