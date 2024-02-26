@@ -26,16 +26,12 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Oh My Zsh のプラグイン
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::docker
 # OMZL Shorthand Syntax
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::termsupport.zsh
 # 外部プラグイン
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
 zinit light unixorn/fzf-zsh-plugin
 zinit load zdharma/history-search-multi-word
 # Plugin history-search-multi-word loaded with investigating.
@@ -48,6 +44,12 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # httpstat プラグインの設定
 zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
 zinit light b4b4r07/httpstat
+
+# GitHub CLI 補完スクリプトの読み込み
+if [ -f ~/.zsh/completion/_gh ]; then
+    fpath=(~/.zsh/completion $fpath)
+fi
+autoload -U compinit && compinit
 
 # その他の設定をここに追加
 source $ZSH/oh-my-zsh.sh
