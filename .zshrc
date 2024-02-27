@@ -26,14 +26,11 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-# Oh My Zsh のプラグイン
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::docker
 # OMZL Shorthand Syntax
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::termsupport.zsh
 # 外部プラグイン
+zinit light hlissner/zsh-autopair
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light unixorn/fzf-zsh-plugin
@@ -49,17 +46,19 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
 zinit light b4b4r07/httpstat
 
-# GitHub CLI 補完スクリプトの読み込み
-if [ -f ~/.zsh/completion/_gh ]; then
-    fpath=(~/.zsh/completion $fpath)
-fi
-autoload -U compinit && compinit
+# Oh My Zsh のプラグイン
+zinit snippet OMZP::git
+# zinit ice depth=1
+# zinit light jeffreytse/zsh-vi-mode
 
 # その他の設定をここに追加
 source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 neofetch
 
