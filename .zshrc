@@ -58,7 +58,13 @@ export PATH=$PATH:~/.cargo/bin
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 neofetch
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export DENO_INSTALL="/home/garchomp-game/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$PATH:/home/garchomp-game/.yarn/bin"
